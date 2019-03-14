@@ -5,6 +5,7 @@
     "serve": "firebase serve --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
+    "start:express": "nodemon express.js",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },

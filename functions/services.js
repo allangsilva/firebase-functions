@@ -21,6 +21,10 @@ else
 const db = admin.firestore();
 db.settings(settings);
 
+/**
+ * Definição das functions
+ */
+
 //Adiciona uma nova mensagem
 exports.addMessage = functions.https.onRequest((req, res) => {
 
