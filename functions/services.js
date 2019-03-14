@@ -51,5 +51,19 @@ exports.getMessages = functions.https.onRequest((req, res) => {
            res.status(500);
            return;
         });
+});
 
+//delete
+exports.deleteMessage = functions.https.onRequest((req, res) => {
+   
+    res.setHeader('Content-Type', 'application/json');
+    const doc = db.collection('messages').doc(req.params.id);
+    return doc.delete()
+            .then(value => {
+                res.send({ ok: "ok" })
+                return
+            }).catch(err => {
+                console.log(err)
+                res.status(500)
+            })
 });

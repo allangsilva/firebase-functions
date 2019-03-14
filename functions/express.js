@@ -17,4 +17,9 @@ app.get('/messages', (req, res) => {
     services.getMessages(req, res);
 });
 
+app.delete('/messages/:id', (req, res) => {
+    console.log(req.params)
+    services.deleteMessage(req, res);
+});
+
 app.listen(3000, () => `app listen in port 3000`);
